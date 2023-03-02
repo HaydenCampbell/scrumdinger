@@ -17,6 +17,7 @@
 		71C2ECB029B08C6D00D8C398 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2ECAF29B08C6D00D8C398 /* ScrumsView.swift */; };
 		71C2ECB429B091A300D8C398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C2ECB329B091A300D8C398 /* Assets.xcassets */; };
 		71C2ECB729B0AC9C00D8C398 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2ECB629B0AC9C00D8C398 /* DetailView.swift */; };
+		71C2ECB929B0BCBB00D8C398 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2ECB829B0BCBB00D8C398 /* DetailEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		71C2ECB329B091A300D8C398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71C2ECB529B09C0F00D8C398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		71C2ECB629B0AC9C00D8C398 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		71C2ECB829B0BCBB00D8C398 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				71C2ECAF29B08C6D00D8C398 /* ScrumsView.swift */,
 				71C2ECB329B091A300D8C398 /* Assets.xcassets */,
 				71C2ECB629B0AC9C00D8C398 /* DetailView.swift */,
+				71C2ECB829B0BCBB00D8C398 /* DetailEditView.swift */,
 			);
 			path = scrumdinger;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				71C2ECAA29B080E300D8C398 /* DailyScrum.swift in Sources */,
 				71C2ECB729B0AC9C00D8C398 /* DetailView.swift in Sources */,
+				71C2ECB929B0BCBB00D8C398 /* DetailEditView.swift in Sources */,
 				71C2ECAE29B0877F00D8C398 /* TrailingIconLabelStyle.swift in Sources */,
 				71C2ECA829B07E8000D8C398 /* Theme.swift in Sources */,
 				71C2ECB029B08C6D00D8C398 /* ScrumsView.swift in Sources */,
