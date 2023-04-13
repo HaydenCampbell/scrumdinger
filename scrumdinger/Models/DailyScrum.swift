@@ -12,6 +12,14 @@ struct DailyScrum: Identifiable {
     var title: String
     var attendees: [Attendee]
     var lengthInMinutes: Int
+    var lengthInMinutesAsDouble: Double {
+        get {
+            Double(lengthInMinutes)
+        }
+        set {
+            lengthInMinutes = Int(newValue)
+        }
+    }
     var theme: Theme
     
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
@@ -34,16 +42,20 @@ extension DailyScrum {
         }
     }
     
-    struct Data {
-        var title: String = ""
-        var attendees: [Attendee] = []
-        var lengthInMinutes: Double = 5
-        var theme: Theme = .seafoam		
+    static var emptyScrum: DailyScrum {
+        DailyScrum(title: "", attendees: [], lengthInMinutes: 5, theme: .sky)
     }
     
-    var data: Data {
-        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
-    }
+//    struct Data {
+//        var title: String = ""
+//        var attendees: [Attendee] = []
+//        var lengthInMinutes: Double = 5
+//        var theme: Theme = .seafoam
+//    }
+//
+//    var data: Data {
+//        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+//    }
 }
 
 extension DailyScrum {

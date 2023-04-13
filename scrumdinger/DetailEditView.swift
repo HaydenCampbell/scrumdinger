@@ -8,29 +8,30 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    @State private var data = DailyScrum.Data()
+    @Binding var scrum: DailyScrum
     @State private var newAttendeeName = ""
     
     var body: some View {
-        Form{
+        Form {
             Section(header: Text("Meeting Info")){
-                TextField("Title", text: $data.title)
+                TextField("Title", text: $scrum.title)
                 HStack {
-                    Slider(value: $data.lengthInMinutes, in: 5...30, step: 1){
+                    Slider(value: $scrum.lengthInMinutesAsDouble, in: 5...30, step: 1){
                         Text("Length")
                     }
-                    .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
+                    .accessibilityValue("\(scrum.lengthInMinutes) minutes")
                     Spacer()
-                    Text("\(Int(data.lengthInMinutes)) minutes")
+                    Text("\(scrum.lengthInMinutes) minutes")
                         .accessibilityHidden(true)
                 }
+                ThemePicker(selection: $scrum.theme)
             }
             Section(header: Text("Attendees")){
-                ForEach(data.attendees) { attendee in
+                ForEach(scrum.attendees) { attendee in
                     Text(attendee.name)
                 }
                 .onDelete { indices in
-                    data.attendees.remove(atOffsets: indices)
+                    scrum.attendees.remove(atOffsets: indices)
                     
                 }
                 HStack {
@@ -38,7 +39,7 @@ struct DetailEditView: View {
                     Button(action: {
                         withAnimation {
                             let attendee = DailyScrum.Attendee(name: newAttendeeName)
-                            data.attendees.append(attendee)
+                            scrum.attendees.append(attendee)
                             newAttendeeName = ""
                         }
                     }) {
@@ -54,6 +55,6 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView()
+        DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
     }
 }
